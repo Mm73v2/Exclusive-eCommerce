@@ -6,7 +6,7 @@ import Login from "../pages/Login";
 import Cart from "../pages/Cart";
 import Wishlist from "../pages/Wishlist";
 import Checkout from "../pages/Checkout";
-import About from "../pages/about";
+import About from "../pages/About";
 import ProductInfo from "../pages/ProductInfo";
 import Contact from "../pages/Contact";
 import Profile from "../pages/Profile";
