@@ -36,6 +36,14 @@ const Product = ({
     }
   };
 
+  const addToWishListHandler = () => {
+    if (ctx.user) {
+      ctx.addToWishlist(id);
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <div className="flex flex-col gap-y-3 mb-5 group">
       <div className="relative bg-grayBg  p-3 rounded-lg text-center">
@@ -56,7 +64,7 @@ const Product = ({
         )}
         <div className="absolute top-3 right-3 flex flex-col gap-2">
           <button
-            onClick={() => ctx.addToWishlist(id)}
+            onClick={addToWishListHandler}
             className={`bg-white ${
               pathname === "/wishlist" ? (!inWishlist ? "hidden" : "block") : ""
             } rounded-full p-1 cursor-pointer`}
