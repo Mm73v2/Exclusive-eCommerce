@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Context from "../../store/Context";
 import getUser from "../../utils/getUser";
 import { Minus, Plus, Heart } from "lucide-react";
 
 const ProductInfoControls = ({ id }) => {
   const { addToWishlist, addProduct } = useContext(Context);
+
+  const navigate = useNavigate();
 
   const user = getUser();
 
@@ -16,6 +19,14 @@ const ProductInfoControls = ({ id }) => {
 
   const decrement = () => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  };
+
+  const addToWishListHandler = () => {
+    if (user) {
+      addToWishlist(id);
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
@@ -54,7 +65,7 @@ const ProductInfoControls = ({ id }) => {
         </button>
 
         <button
-          onClick={() => addToWishlist(id)}
+          onClick={addToWishListHandler}
           className="p-3 border border-gray-300 rounded-md group hover:bg-primary hover:border-primary transition-colors"
         >
           <Heart size={24} className="text-gray-700 group-hover:text-white" />
