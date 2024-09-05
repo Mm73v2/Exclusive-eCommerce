@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import Context from "../store/Context";
 import Product from "../components/Product/Product";
 
@@ -65,9 +66,12 @@ const Wishlist = () => {
         <h4 className="font-semibold text-xl mb-6 relative before:content-[''] before:absolute before:left-0 before:top-1/2 pl-10 before:transform before:translate-y-[-50%] before:bg-primary before:w-[23px] before:h-[50px] before:rounded">
           Just for you
         </h4>
-        <button className="border px-10 py-3 bg-transparent rounded hover:text-white hover:bg-primary transition-colors">
+        <Link
+          to="/#products"
+          className="border px-10 py-3 bg-transparent rounded hover:text-white hover:bg-primary transition-colors"
+        >
           See All
-        </button>
+        </Link>
       </div>
 
       <div className="mt-8 grid gap-8 grid-rows-1 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">

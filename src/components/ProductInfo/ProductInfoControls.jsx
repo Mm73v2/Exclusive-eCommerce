@@ -29,6 +29,14 @@ const ProductInfoControls = ({ id }) => {
     }
   };
 
+  const addToCartHandler = () => {
+    if (user) {
+      addProduct(id, user.email, quantity);
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <div className="flex max-xl:flex-col xl-items-center gap-4 mt-4">
       <div className="flex items-center border border-gray-300 rounded-md overflow-hidden w-fit">
@@ -58,7 +66,7 @@ const ProductInfoControls = ({ id }) => {
       </div>
       <div className="flex gap-4">
         <button
-          onClick={() => addProduct(id, user.email, quantity)}
+          onClick={addToCartHandler}
           className="bg-primary text-white px-8 py-2 rounded-md font-medium hover:bg-red-700 transition-colors"
         >
           Buy Now

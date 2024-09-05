@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowDown } from "lucide-react";
 
 const TopHeader = () => {
@@ -11,9 +12,9 @@ const TopHeader = () => {
     <div className="bg-black  py-3 block lg:flex wrapper relative">
       <h2 className="text-textPrimary text-sm md:text-base mx-auto">
         Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-        <a className="ml-5 underline text-white font-bold" href="#">
+        <Link to="/" className="ml-5 underline text-white font-bold">
           Shop Now
-        </a>
+        </Link>
       </h2>
       <div
         className="flex items-center justify-center max-sm:mt-3 gap-1 text-textPrimary cursor-pointer"

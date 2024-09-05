@@ -149,7 +149,10 @@ const ContextProvider = ({ children }) => {
       );
 
       if (productsToMove.length === 0) {
-        console.log("No new products to add to the cart.");
+        const requests = wishlist.map(
+          async (product) => await emptyWishlist(product.id)
+        );
+        setWishlist([]);
         return;
       }
 
