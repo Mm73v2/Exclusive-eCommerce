@@ -28,7 +28,7 @@ const ToTopBtn = () => {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="rounded-full p-3 animate-bounce bg-black fixed right-12 bottom-12"
+        className="z-50 rounded-full p-3 animate-bounce bg-black fixed right-12 bottom-12"
       >
         <ArrowUp className="text-white" size={25} />
       </button>
